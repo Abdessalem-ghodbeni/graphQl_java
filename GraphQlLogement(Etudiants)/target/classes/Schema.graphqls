@@ -1,0 +1,30 @@
+type RendezVous{
+    id :Int
+    date: String
+    numTel:String
+    logement:Logement
+    heure:String
+}
+type Logement{
+    reference :Int
+    adresse:String
+    delegation:String
+    gouvernorat:String
+    type :Type
+    description :String
+    prix: Float
+
+}
+enum Type {
+    Studio
+    Appartement
+    EtageVilla
+}
+type Querries {
+    getRendezvousList:[RendezVous]
+
+}
+schema {
+    query: Querries
+
+}
