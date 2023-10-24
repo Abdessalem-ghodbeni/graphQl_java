@@ -22,6 +22,7 @@ enum Type {
 }
 type Mutations{
     CreateRendezVous(id:Int ,date: String ,heure: String ,  refLog:Int,  numTel:String ):Boolean
+    UpdateRendezVous(id :Int ,date: String , heure:String , numTel:String):Boolean
 }
 type Querries {
     getRendezvousList:[RendezVous]
