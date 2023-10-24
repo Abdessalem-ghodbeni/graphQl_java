@@ -23,4 +23,7 @@ public class Querries implements GraphQLRootResolver {
     public List<Logement> getAllLogements() {
         return logementRepository.getAllLogements();
     }
+    public  List<RendezVous> getAllRendzvousByLogement(int reflog){
+        return rdvReo.getListeRendezVousByLogementRef(reflog);
+    }
 }

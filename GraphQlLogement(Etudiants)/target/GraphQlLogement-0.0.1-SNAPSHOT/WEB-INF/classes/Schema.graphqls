@@ -28,7 +28,8 @@ type Mutations{
 type Querries {
     getRendezvousList:[RendezVous]
     getAllLogements:[Logement]
-   
+    getAllRendzvousByLogement(reflog:Int):[RendezVous]
+
 }
 schema {
     query: Querries
