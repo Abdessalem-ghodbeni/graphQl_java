@@ -20,11 +20,16 @@ enum Type {
     Appartement
     EtageVilla
 }
+type Mutations{
+    CreateRendezVous(id:Int ,date: String ,heure: String ,  refLog:Int,  numTel:String ):Boolean
+}
 type Querries {
     getRendezvousList:[RendezVous]
+    getAllLogements:[Logement]
 
 }
 schema {
     query: Querries
+    mutation: Mutations
 
 }
