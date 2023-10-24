@@ -23,11 +23,12 @@ enum Type {
 type Mutations{
     CreateRendezVous(id:Int ,date: String ,heure: String ,  refLog:Int,  numTel:String ):Boolean
     UpdateRendezVous(id :Int ,date: String , heure:String , numTel:String):Boolean
+    DeleteRdv(id :Int):Boolean
 }
 type Querries {
     getRendezvousList:[RendezVous]
     getAllLogements:[Logement]
-    UpdateRendezVous:[RendezVous]
+   
 }
 schema {
     query: Querries

@@ -15,16 +15,20 @@ public class Mutations implements GraphQLRootResolver {
         this.logementRepository = logementRepository;
     }
 
-    public boolean CreateRendezVous(int id, String date, String heure, int refLog, String numTel) {
+    public Boolean CreateRendezVous(int id, String date, String heure, int refLog, String numTel) {
         Logement log = logementRepository.getLogementsByReference((refLog));
         RendezVous rend = new RendezVous(id, date, heure, log, numTel);
         return rendezVousRepository.addRendezVous(rend);
     }
 
-    public boolean UpdateRendezVous(int id, String date, String heure, String numTel) {
+    public Boolean UpdateRendezVous(int id, String date, String heure, String numTel) {
         Logement logement = rendezVousRepository.getLogementByRDV(id);
         RendezVous updateRendezVous = new RendezVous(id, date, heure, logement, numTel);
         return rendezVousRepository.updateRendezVous(updateRendezVous);
+
+    }
+    public Boolean DeleteRdv(int id){
+         return rendezVousRepository.deleteRendezVous(id);
 
     }
 }
